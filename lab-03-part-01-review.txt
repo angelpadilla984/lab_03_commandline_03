@@ -371,7 +371,7 @@ Write the command(s) that you used to do this below:
 
 
 $ cd mtec-1003-lab-03
-$ ls
+$ ls -t
 
 ----------
 
