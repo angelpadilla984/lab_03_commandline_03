@@ -37,7 +37,7 @@ $ ls
 Copy and paste the output below.
 ----------
 
-
+foo.txt
 
 ==========
 7. Create another new file using touch.
@@ -53,7 +53,8 @@ $ touch bar.txt
 Copy and paste the output below.
 ----------
 
-
+-rw-r--r-- 1 angel 197609 0 Mar 24 19:53 bar.txt
+-rw-r--r-- 1 angel 197609 0 Mar 24 19:53 foo.txt
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -62,13 +63,16 @@ Copy and paste the output below.
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
 
-
+bar.txt  baz.txt  foo.txt
 
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+
+baz.txt  foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
@@ -76,7 +80,7 @@ Write the command that you used to remove the file.  Copy and paste the output o
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
 
-
+baz.txt  qux.txt
 
 ==========
 12. Go up one directory so that you're in ~/mtec-1003-lab-03
@@ -90,6 +94,11 @@ Write the command that you used to move the file.  Copy and paste the output of 
 
 Write out the command that you used and what happened.
 ----------
+$ rmdir my_files
+
+After I typed that, it says this: 
+
+rmdir: failed to remove 'my_files': Directory not empty
 
 
 
@@ -99,7 +108,11 @@ Write out the command that you used and what happened.
 Write out the command that you used and what happened.
 ----------
 
+$ rm my_files
 
+After I typed that, it says this:
+
+rm: cannot remove 'my_files': Is a directory
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec1002-lab-03 directory!  
@@ -109,7 +122,7 @@ Force the removal of the directory and files using the -rf flag
 $ rm -rf my_files
 ----------
 
-
+It worked
 
 ==========
 16. There's a txt file version of a book located in the mtec1002-lab-03 folder.  It is in the following directory if you're in the lab folder:
@@ -121,6 +134,7 @@ Use the command called cat on the file to show its contents.
 Describe what happened below.
 ----------
 
+So when I typed the command in, there are multiple bodies of text with different sections. I am assuming that these are different chapters that makes up a fictional story since all of it is written in third person primarily.
 
 
 ==========
@@ -133,6 +147,9 @@ Use the command, head, on the file to show the contents of the beginning of the 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
+Command: $ head books/other/pg1232.txt
+
+Output of the last line: "Title: The Prince"
 
 
 ==========
@@ -145,7 +162,11 @@ Use tail on the file to show the contents of the end of the file.
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
-
+Command: $ tail books/other/pg1232.txt
+Output of the last line: It's not the title but it says this - This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
 
 ==========
 19. Using the same file...
@@ -157,6 +178,11 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
 
+Command: $ less books/other/pg1232.txt
+
+q and/or spacebar ultimately effects the length of the output of text.
+q shows no text while spacebar shows the netire thing
+
 
 
 ==========
@@ -165,14 +191,16 @@ Write the command that you used below.  Describe what spacebar and q does after 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
 
+After typing less and then entering q afterwards, it does not show the entire text. But, if one were to type spacebar after less, then it shows the entire text. When I type head it talks about the eBook in a lengthy description but when I type in tail, it talks more about the web site that the eBook comes from. For some reason, typing more gives me a bash error, which reads "bash: more: command not found."
 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
 
-
+I typed in $ wc -w books/other/pg1232.txt and it says that the book has 52639 words in total
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+I typed in $ wc -l books/other/pg1232.txt and it says that the book has 5063 lines in total.
